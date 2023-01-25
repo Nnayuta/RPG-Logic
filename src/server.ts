@@ -36,12 +36,14 @@ const Player1 = new Character({ name: 'Nayuta', Class: Sorcerer, Race: Elf })
 const Player2 = new Character({ name: 'Firulinha', Class: Sorcerer, Race: Elf })
 
 try {
+    Player1.giveXp({ value: 344 })
+    Player1.Profile()
     Player1.Class.learnSpell({ spell: cuteBall })
     Player1.Class.learnSpell({ spell: evilShovel })
-    console.log(Player1.Class.spellBook)
+    Player1.Class.ShowSpelllBook()
     Player1.Class.spellBook[0].castSpell({ caster: Player1, target: Player2 })
     Player1.Class.unLearnSpell({ spellToUnlearn: cuteBall })
-    console.log(Player1.Class.spellBook)
+    Player1.Class.ShowSpelllBook()
 } catch (error) {
     console.log(error)
 }
